@@ -1,0 +1,112 @@
+根據上傳的行銷文案做 交叉分析
+
+請用繁體中文執行以下的任務:
+任務一:
+SWOT 的內容請務必用表格畫出,標頭寫 "SWOT 分析" , 左上角為 Strengths 包含 Strengths 的條列至少三個項目, 左上角為 Weaknesses 包含 Weaknesses 的條列至少五個項目, 左下角為 Opportunities 包含 Opportunities 的條列至少五個項目,右下角為 Threats 包含 Threats 的條列至少五個項目
+
+任務二:
+請務必劃出兩個直欄的表格,
+左側,標頭寫 "策略展開":請根據  Strengths +   Opportunities  條列出至少五個執行的展開策略
+右側,標頭寫 "因應方針":請根據  Weaknesses +   Threats  條列出至少五個需要因應的方針
+
+任務三:
+根據上述的 SWOT 條列項目摘要 產生 mermaid 語法的 quadrantChart in markdown codeblock:
+
+#quadrantChart繪製提示:
+請根據用戶提示的文本內容，使用mermaid製作一個邏輯清晰、SWOT的範圍。確保 quadrantChart 的 劣勢、優勢、機會、威脅 每個的五個項目都能列於 quadrant-1、quadrant-2、quadrant-3、quadrant-4 之中 所有相關項目清晰地展現主題內容的不同方面。請簡潔地使用關鍵詞和短語，避免冗床描述。
+
+注意:
+- quadrantChart使用繁體中文，但是專用名詞保持英文，比如 AI、AIGC、IoT 等等
+-請嚴格按照 {MermaidnquadrantChart 圖代碼}中的 Mermaid語法輸出到 Mermaid Code Block,注意 root只能有一個
+-x-axis 與 y-axis 資料不能變動  
+-條列項目的資料不宜超過10個字,也不能少於5個字
+-quadrant-1 的座標 0.65 - 0.8 , 0.55 - 0.85 ,座標如下
+  [0.65, 0.55]、 [0.75, 0.60]、 [0.65, 0.68]、 [0.75, 0.76]、 [0.65, 0.85] 
+-quadrant-2 的座標 0.2 - 0.4 , 0.55 - 0.85
+  [0.3, 0.7]、 [0.2, 0.8]、 [0.3, 0.9]、 [0.2, 0.6]  、[0.3, 0.55]
+-quadrant-3 的座標 0.2 - 0.4 , 0.15 - 0.45
+ [0.3, 0.15]、 [0.2, 0.22]、 [0.3, 0.3]、 [0.2, 0.36]、 [0.3, 0.42] 
+-quadrant-4 的座標 0.65 - 0.8 , 0.15 - 0.45
+ [0.65, 0.15]、 [0.75, 0.22]、 [0.65, 0.3]、 [0.75, 0.36]、 [0.65, 0.42]
+
+-請根據上傳的 swot-color.png 裏頭的 SWOT  四象限用色 , 更改參考的 Mermaid quadrantChart 圖代碼中   的: quadrant1Fill 、quadrant2Fill、quadrant3Fill、quadrant4Fill 的對應顏色
+
+
+###以下由三個 `分隔的代碼,是 Mermaid quadrantChart 圖代碼:
+```mermaid
+%%{init: {"quadrantChart": {"chartWidth": 400, "chartHeight": 400, "pointLabelFontSize":13}, "themeVariables": {"quadrant1Fill": "#9c4d56", "quadrant4Fill": "#ad7e56", "quadrant2Fill": "#94b5b3", "quadrant3Fill": "#386384", "quadrantPointFill":"#800000","quadrantPointTextFill":"#fffffc"}}}%%
+
+quadrantChart
+    title 開立線上教學課程的SWOT分析圖表📊
+    
+    x-axis "策略展開🪄" --> "因應方針✨"
+    y-axis "外部來源/環境属性" --> "内部來源/組織屬性"
+    
+    quadrant-1 "【Weaknesses/劣勢🙅‍♂️】"
+    quadrant-2 "【Strengths/優勢💪】"
+    quadrant-3 "【Opportunities/機會💰】"
+    quadrant-4 "【Threats/威脅😈】"
+    
+    "強勢1": [0.3, 0.7]
+    "強勢2": [0.2, 0.8]
+    "強勢3": [0.3, 0.9]
+    "強勢4": [0.2, 0.6]
+    "強勢5": [0.3, 0.55]
+
+    
+    "機會1": [0.3, 0.15]
+    "機會2": [0.2, 0.22]
+    "機會3": [0.3, 0.3]
+    "機會4": [0.2, 0.36]
+    "機會5": [0.3, 0.42]
+    
+    "弱勢1": [0.65, 0.55]
+    "弱勢2": [0.75, 0.60]
+    "弱勢3": [0.65, 0.68]
+    "弱勢4": [0.75, 0.76]
+    "弱勢5": [0.65, 0.85] 
+
+    
+    "威脅1": [0.65, 0.15]
+    "威脅2": [0.75, 0.22]
+    "威脅3": [0.65, 0.3]
+    "威脅4": [0.75, 0.36]
+    "威脅5": [0.65, 0.42]
+
+
+```
+------
+任務四: 
+將SWOT中機會的強度以雷達圖呈現,每個軸線使用0-10的評分量表,請用表格列出,項目得分不得為空白,並將資料轉換成 CSV格式
+
+任務五: 
+將SWOT中威脅的強度以雷達圖呈現,每個軸線使用0-10的評分量表,請用表格列出,項目得分不得為空白,並將資料轉換成 CSV格式
+
+
+任務六:
+請根據策略展開的執行優先順序的強度以雷達圖呈現,每個軸線使用0-10的評分量表,請用表格列出,項目得分不得為空白,並將資料轉換成 CSV格式
+
+
+任務七:
+請根據因應方針的執行優先順序的強度以雷達圖呈現,每個軸線使用0-10的評分量表,請用表格列出,項目得分不得為空白,並將資料轉換成 CSV格式
+
+任務八:
+針對展開策略列出行動計劃矩陣
+
+任務九:
+根據具體行動的評估時間提供時間軸圖,提供 timeline 的 mermaid 語法,而執行時間為2024/12/1 開始
+###以下由三個 `分隔的代碼,是 Mermaid timeline代碼:
+```
+timeline
+    title History of Social Media Platform
+    2002 : LinkedIn
+    2004 : Facebook
+         : Google
+    2005 : Youtube
+    2006 : Twitter
+```
+任務十:
+根據 SWOT 為四個主要群組,於這四個群組的個別子群組為各別五個項目,請設計表格第一欄為 SWOT 條列,而第二欄為 SWOT 條列的個別5個項目,第三欄為根據這  4x5 個項目給予評分他的重要性,分數為 0-100分,請完整提供,4x5 個得分項目 不得為空白;並且將資料轉換成 CSV
+
+現在開始分析用戶提供的資料內容
+
